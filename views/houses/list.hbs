@@ -1,0 +1,321 @@
+<!-- NAVIGATION -->
+
+<nav class="logIn">
+	<div class="container text-center py-3">
+		<div class="row">
+			<!-- COLUMA 1 NAV - LOGO -->
+			<div class="col" align="left">
+				<a class="navbar-brand" href="/houses">
+					<img
+						src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1642399114/portal/web%20development%20beginners/05%20Project%20Airbnb/assets/logo-airbnb.png"
+						alt=""
+						height="50px"
+					/>
+				</a>
+			</div>
+			<!-- END OF COL 1 - LOGO -->
+			<!-- COL 2 NAV - PROFILE AND LOG IN -->
+			<div class="col" align="right">
+				<!-- PROFILE LINK -->
+				<a class="btn btn-outline-secondary">
+					PROFILE
+				</a>
+				<!-- LOGIN BUTTON -->
+				<a class="btn btn-outline-secondary">
+					LOG IN
+				</a>
+			</div>
+		</div>
+	</div>
+</nav>
+<!-- END OF NAVIGATION -->
+<!-- FILTERS -->
+<section class="bg-light">
+	<div class="container text-center bg-light py-3">
+		<form>
+			<div class="row">
+				<!-- LOCATION FILTER -->
+				<div class="col">
+					<div class="input-group">
+						<label class="input-group-text" for="inputGroupSelect01"
+							><i class="fa-solid fa-location-dot"></i
+						></label>
+						<select class="form-select" id="inputGroupSelect01">
+							<option selected>Any Location</option>
+							<option value="1">Koh Samui</option>
+							<option value="2">Koh Phangan</option>
+							<option value="3">Bali</option>
+						</select>
+					</div>
+				</div>
+				<!-- ROOMS FILTER -->
+				<div class="col">
+					<div class="input-group">
+						<label class="input-group-text"
+							><i class="fa-solid fa-house"></i
+						></label>
+						<select class="form-select" id="inputGroupSelect01">
+							<option selected>Any rooms</option>
+							<option value="1">1 room</option>
+							<option value="2">2 rooms</option>
+							<option value="3">3 rooms</option>
+							<option value="4">4 rooms</option>
+							<option value="5">5 rooms</option>
+						</select>
+					</div>
+				</div>
+				<!-- MAX PRICE FILTER -->
+				<div class="col">
+					<div class="input-group">
+						<label class="input-group-text"
+							><i class="fa-solid fa-dollar-sign"></i
+						></label>
+						<input
+							type="text"
+							class="form-control"
+							aria-label="Amount (to the nearest dollar)"
+							placeholder="Max Price"
+						/>
+					</div>
+				</div>
+				<!-- PRICE FILTER DROPDOWN -->
+				<div class="col">
+					<div class="input-group">
+						<label class="input-group-text"
+							><i class="fa-solid fa-sort"></i
+						></label>
+						<select class="form-select" id="inputGroupSelect01">
+							<option selected>Price (low to high)</option>
+							<option value="1">Price (high to low)</option>
+						</select>
+					</div>
+				</div>
+				<!-- SEARCH FILTER -->
+				<div class="col">
+					<div class="input-group flex-nowrap">
+						<input
+							type="text"
+							class="form-control"
+							placeholder="House name..."
+							aria-label="Username"
+							aria-describedby="addon-wrapping"
+						/>
+					</div>
+				</div>
+				<!-- SEARCH BUTTON -->
+				<div class="col">
+					<button type="button" class="btn btn-success">Search</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</section>
+<!-- END OF FILTERS -->
+<!-- CARDS/HOUSES SECTION -->
+<section>
+	<div class="container text-center py-3">
+		<div class="row row-cols-4 g-3">
+			<div class="col">
+				<!-- House 1 Card-->
+				<div class="card">
+					<img
+						src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+						class="card-img-top"
+					/>
+					<div class="card-body text-start">
+						<p class="small">
+							<i class="fa-solid fa-location-dot"></i> Koh Samui • 4 Rooms
+						</p>
+						<h5 class="card-title mb-3">Luxury Villa in Chaweng</h5>
+						<div class="row">
+							<div class="col">
+								<p class="small">
+									<i class="fa-solid fa-thumbs-up text-success"></i> 3
+									Reviews
+								</p>
+							</div>
+							<div class="col text-end">
+								<p class="small">$350/Night</p>
+							</div>
+						</div>
+						<a href="#" class="stretched-link"></a>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<!-- House 2 Card-->
+				<div class="card">
+					<img
+						src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2002/house_02_01.png
+
+"
+						class="card-img-top"
+					/>
+					<div class="card-body text-start">
+						<p class="small">
+							<i class="fa-solid fa-location-dot"></i> Koh Samui • 4 Rooms
+						</p>
+						<h5 class="card-title mb-3">Luxury Villa in Chaweng</h5>
+						<div class="row">
+							<div class="col">
+								<p class="small">
+									<i class="fa-solid fa-thumbs-up text-success"></i> 3
+									Reviews
+								</p>
+							</div>
+							<div class="col text-end">
+								<p class="small">$350/Night</p>
+							</div>
+						</div>
+						<a href="#" class="stretched-link"></a>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<!-- House 3 Card-->
+				<div class="card">
+					<img
+						src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2003/house_03_01.png
+
+"
+						class="card-img-top"
+					/>
+					<div class="card-body text-start">
+						<p class="small">
+							<i class="fa-solid fa-location-dot"></i> Koh Samui • 4 Rooms
+						</p>
+						<h5 class="card-title mb-3">Luxury Villa in Chaweng</h5>
+						<div class="row">
+							<div class="col">
+								<p class="small">
+									<i class="fa-solid fa-thumbs-up text-success"></i> 3
+									Reviews
+								</p>
+							</div>
+							<div class="col text-end">
+								<p class="small">$350/Night</p>
+							</div>
+						</div>
+						<a href="#" class="stretched-link"></a>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<!-- House 4 Card-->
+				<div class="card">
+					<img
+						src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2004/house_04_01.png
+
+"
+						class="card-img-top"
+					/>
+					<div class="card-body text-start">
+						<p class="small">
+							<i class="fa-solid fa-location-dot"></i> Koh Samui • 4 Rooms
+						</p>
+						<h5 class="card-title mb-3">Luxury Villa in Chaweng</h5>
+						<div class="row">
+							<div class="col">
+								<p class="small">
+									<i class="fa-solid fa-thumbs-up text-success"></i> 3
+									Reviews
+								</p>
+							</div>
+							<div class="col text-end">
+								<p class="small">$350/Night</p>
+							</div>
+						</div>
+						<a href="#" class="stretched-link"></a>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<!-- House 5 Card-->
+				<div class="card">
+					<img
+						src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2005/house_05_01.png
+
+"
+						class="card-img-top"
+					/>
+					<div class="card-body text-start">
+						<p class="small">
+							<i class="fa-solid fa-location-dot"></i> Koh Samui • 4 Rooms
+						</p>
+						<h5 class="card-title mb-3">Luxury Villa in Chaweng</h5>
+						<div class="row">
+							<div class="col">
+								<p class="small">
+									<i class="fa-solid fa-thumbs-up text-success"></i> 3
+									Reviews
+								</p>
+							</div>
+							<div class="col text-end">
+								<p class="small">$350/Night</p>
+							</div>
+						</div>
+						<a href="#" class="stretched-link"></a>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<!-- House <6></6> Card-->
+				<div class="card">
+					<img
+						src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2006/house_06_01.png
+
+"
+						class="card-img-top"
+					/>
+					<div class="card-body text-start">
+						<p class="small">
+							<i class="fa-solid fa-location-dot"></i> Koh Samui • 4 Rooms
+						</p>
+						<h5 class="card-title mb-3">Luxury Villa in Chaweng</h5>
+						<div class="row">
+							<div class="col">
+								<p class="small">
+									<i class="fa-solid fa-thumbs-up text-success"></i> 3
+									Reviews
+								</p>
+							</div>
+							<div class="col text-end">
+								<p class="small">$350/Night</p>
+							</div>
+						</div>
+						<a href="#" class="stretched-link"></a>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<!-- House <6></6> Card-->
+				<div class="card">
+					<img
+						src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2007/house_07_01.png
+
+"
+						class="card-img-top"
+					/>
+					<div class="card-body text-start">
+						<p class="small">
+							<i class="fa-solid fa-location-dot"></i> Koh Samui • 4 Rooms
+						</p>
+						<h5 class="card-title mb-3">Luxury Villa in Chaweng</h5>
+						<div class="row">
+							<div class="col">
+								<p class="small">
+									<i class="fa-solid fa-thumbs-up text-success"></i> 3
+									Reviews
+								</p>
+							</div>
+							<div class="col text-end">
+								<p class="small">$350/Night</p>
+							</div>
+						</div>
+						<a href="#" class="stretched-link"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

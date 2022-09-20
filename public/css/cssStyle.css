@@ -1,0 +1,5 @@
+div.thaiBack {
+  background-image: url(public/images/thailand.jpg);
+  background-size: 100% auto;
+  height: 100vh;
+}

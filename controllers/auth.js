@@ -1,15 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-// GET SEND MESSAGE TO BROWSER
-
-router.get("/", (req, res) => {
-  res.send("Hello World");
-});
-
 // NESTED CONTROLLERS - {get/login}, {get/signup}, {post/login}, {post/signup}, {get/logout}
 
-router.get("/login", (req, res) => {
+router.get("/", (req, res) => {
   res.render("login");
 });
 
@@ -18,15 +12,15 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  res.render("login");
+  res.send("Login Page Post response)");
 });
 
-router.post("/login", (req, res) => {
-  res.render("login");
+router.post("/signup", (req, res) => {
+  res.send("Signup Page Post response)");
 });
 
 router.get("/logout", (req, res) => {
-  res.render("logout");
+  res.redirect("/houses");
 });
 
 module.exports = router;

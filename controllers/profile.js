@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("Hello World");
-});
-
 // Get and Patch router paht /
 
-router.get("/", (req, res) => {});
+router.get("/", (req, res) => {
+  res.render("profile");
+});
 
-router.patch("/", (req, res) => {});
+router.patch("/", (req, res) => {
+  res.send("PATCH profile");
+});
 
 module.exports = router;
