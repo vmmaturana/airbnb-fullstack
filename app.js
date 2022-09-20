@@ -50,6 +50,7 @@ app.use("/bookings", require("./controllers/bookings"));
 app.use("/houses", require("./controllers/houses"));
 app.use("/profile", require("./controllers/profile"));
 app.use("/reviews", require("./controllers/reviews"));
+app.use("/", require("./controlers/index"));
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
