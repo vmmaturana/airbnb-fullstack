@@ -1,34 +1,6 @@
-<!-- NAVIGATION -->
 
-<nav class="logIn">
-	<div class="container text-center py-3">
-		<div class="row">
-			<!-- COLUMA 1 NAV - LOGO -->
-			<div class="col" align="left">
-				<a class="navbar-brand" href="/houses">
-					<img
-						src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1642399114/portal/web%20development%20beginners/05%20Project%20Airbnb/assets/logo-airbnb.png"
-						alt=""
-						height="50px"
-					/>
-				</a>
-			</div>
-			<!-- END OF COL 1 - LOGO -->
-			<!-- COL 2 NAV - PROFILE AND LOG IN -->
-			<div class="col" align="right">
-				<!-- PROFILE LINK -->
-				<a class="btn btn-outline-secondary">
-					PROFILE
-				</a>
-				<!-- LOGIN BUTTON -->
-				<a class="btn btn-outline-secondary">
-					LOG IN
-				</a>
-			</div>
-		</div>
-	</div>
-</nav>
-<!-- END OF NAVIGATION -->
+<!-- PARTIAL OF NAV -->
+{{> nav}}
 <!-- FILTERS -->
 <section class="bg-light">
 	<div class="container text-center bg-light py-3">
@@ -37,14 +9,14 @@
 				<!-- LOCATION FILTER -->
 				<div class="col">
 					<div class="input-group">
-						<label class="input-group-text" for="inputGroupSelect01"
-							><i class="fa-solid fa-location-dot"></i
+						<label class="input-group-text">
+							<i class="fa-solid fa-location-dot"></i
 						></label>
-						<select class="form-select" id="inputGroupSelect01">
-							<option selected>Any Location</option>
-							<option value="1">Koh Samui</option>
-							<option value="2">Koh Phangan</option>
-							<option value="3">Bali</option>
+						<select class="form-control form-select-sm" name:"location">
+							<option>Any Location</option>
+							<option>Koh Samui</option>
+							<option>Koh Phangan</option>
+							<option>Bali</option>
 						</select>
 					</div>
 				</div>
@@ -54,13 +26,13 @@
 						<label class="input-group-text"
 							><i class="fa-solid fa-house"></i
 						></label>
-						<select class="form-select" id="inputGroupSelect01">
-							<option selected>Any rooms</option>
-							<option value="1">1 room</option>
-							<option value="2">2 rooms</option>
-							<option value="3">3 rooms</option>
-							<option value="4">4 rooms</option>
-							<option value="5">5 rooms</option>
+						<select class="form-control form-select-sm" name="rooms" >
+							<option>Any rooms</option>
+							<option>1 room</option>
+							<option>2 rooms</option>
+							<option>3 rooms</option>
+							<option>4 rooms</option>
+							<option>5 rooms</option>
 						</select>
 					</div>
 				</div>
@@ -75,6 +47,7 @@
 							class="form-control"
 							aria-label="Amount (to the nearest dollar)"
 							placeholder="Max Price"
+							name = "maxPrice"
 						/>
 					</div>
 				</div>
@@ -84,7 +57,7 @@
 						<label class="input-group-text"
 							><i class="fa-solid fa-sort"></i
 						></label>
-						<select class="form-select" id="inputGroupSelect01">
+						<select class="form-control" name="priceDropdown">
 							<option selected>Price (low to high)</option>
 							<option value="1">Price (high to low)</option>
 						</select>
@@ -99,6 +72,7 @@
 							placeholder="House name..."
 							aria-label="Username"
 							aria-describedby="addon-wrapping"
+							name = "searchFilter"
 						/>
 					</div>
 				</div>
