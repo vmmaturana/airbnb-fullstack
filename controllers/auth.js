@@ -18,8 +18,8 @@ router.post("/login", (req, res) => {
 
 // Getting the info from the SignUp
 router.post("/signup", (req, res) => {
-  console.log(req.body);
   Users.create(req.body);
+  res.redirect("/houses");
 });
 
 router.get("/logout", (req, res) => {
