@@ -17,9 +17,18 @@ router.post("/login", (req, res) => {
 });
 
 // Getting the info from the SignUp
-router.post("/signup", (req, res) => {
-  Users.create(req.body);
-  res.redirect("/houses");
+router.post("/signup", async (req, res, next) => {
+  try {
+    let user = await Users.find({ email: req.body.email });
+    if (user) {
+      throw new Error("User with this email already exists");
+    } else {
+      await Users.create(req.body);
+      res.redirect("/houses");
+    }
+  } catch (err) {
+    next(err);
+  }
 });
 
 router.get("/logout", (req, res) => {
