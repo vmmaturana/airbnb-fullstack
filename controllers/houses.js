@@ -3,20 +3,26 @@ const router = express.Router();
 
 // Routes to the following: (get /), (Get /create), (get /:id), (get /id:/edit), (post /), (patch /:id), (delete /:id)
 
+// INCLUIR EL IF DE AUTHENTHIFICATION
+
 router.get("/", (req, res) => {
-  res.render("houses/list");
+  let loggedUser = req.user;
+  res.render("houses/list", { user: loggedUser });
 });
 
 router.get("/create", (req, res) => {
-  res.render("/houses/create");
+  let loggedUser = req.user;
+  res.render("/houses/create", { user: loggedUser });
 });
 
 router.get("/:id", (req, res) => {
-  res.render("houses/one");
+  let loggedUser = req.user;
+  res.render("houses/one", { user: loggedUser });
 });
 
 router.get("/:id/edit", (req, res) => {
-  res.render("houses/edit");
+  let loggedUser = req.user;
+  res.render("houses/edit", { user: loggedUser });
 });
 
 router.post("/", (req, res) => {

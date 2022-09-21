@@ -14,16 +14,22 @@
 				</a>
 			</div>
 			<!-- END OF COL 1 - LOGO -->
+
+
 			<!-- COL 2 NAV - PROFILE AND LOG IN -->
 			<div class="col" align="right">
+				{{#if user}}
 				<!-- PROFILE LINK -->
 				<a class="btn btn-outline-secondary">
 					PROFILE
 				</a>
-				<!-- LOGIN BUTTON -->
+				<!-- LOGIN OUT -->
 				<a class="btn btn-outline-secondary">
-					LOG IN
+					LOG OUT
 				</a>
+				{{else}}
+<!-- BOTON DE LOGIN -->
+				{{/if}}
 			</div>
 		</div>
 	</div>

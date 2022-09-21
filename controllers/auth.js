@@ -4,7 +4,7 @@ const Users = require("../models/users");
 
 // NESTED CONTROLLERS - {get/login}, {get/signup}, {post/login}, {post/signup}, {get/logout}
 
-router.get("/", (req, res) => {
+router.get("/login", (req, res) => {
   res.render("login");
 });
 
@@ -15,6 +15,7 @@ router.get("/signup", (req, res) => {
 router.post("/login", async (req, res, next) => {
   try {
     let userLogin = await Users.findOne(req.body);
+    console.log(userLogin);
     if (!userLogin) {
       throw new Error("Incorrect login data");
     } else {
@@ -22,9 +23,9 @@ router.post("/login", async (req, res, next) => {
         if (err) {
           throw err;
         }
+        res.redirect("/houses");
       });
     }
-    res.redirect("/houses");
   } catch (err) {
     next(err);
   }
@@ -47,15 +48,22 @@ router.post("/signup", async (req, res, next) => {
 });
 
 router.get("/logout", (req, res, next) => {
-  req.logout((err) => {
-    req.session.destroy((err) => {
+  try {
+    req.logout((err) => {
       if (err) {
-        next(err);
+        throw err;
       }
-      res.clearCookie("connect.sid");
-      res.redirect("/auth");
+      req.session.destroy((err) => {
+        if (err) {
+          throw err;
+        }
+        res.clearCookie("connect.sid");
+        res.redirect("/auth/login");
+      });
     });
-  });
+  } catch (err) {
+    next(err);
+  }
 });
 
 module.exports = router;
