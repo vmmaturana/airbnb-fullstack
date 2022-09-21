@@ -12,16 +12,14 @@
 						/>
 					</div>
 					<div class="card-body">
-						<form>
-							<label for="basic-url" class="form-label">Username</label>
+						<form method='post' action='/auth/login'>
+							<label  class="form-label">Name</label>
 							<div class="input-group mb-3">
-								<input type="text" class="form-control" name="username" />
+								<input type="text" class="form-control" name="name" />
 							</div>
-							<label for="basic-url" class="form-label" name="password"
-								>Password</label
-							>
+							<label class="form-label">Password</label>
 							<div class="input-group mb-3">
-								<input type="text" class="form-control" />
+								<input type="text" class="form-control" name="password"/>
 							</div>
 							<button class="btn btn-success">Log In</button>
 						</form>

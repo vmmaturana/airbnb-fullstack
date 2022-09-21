@@ -12,15 +12,30 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.post("/login", (req, res) => {
-  res.send("Login Page Post response)");
+router.post("/login", async (req, res, next) => {
+  try {
+    let userLogin = await Users.findOne(req.body);
+    if (!userLogin) {
+      throw new Error("Incorrect login data");
+    } else {
+      req.login(userLogin, (err) => {
+        if (err) {
+          throw err;
+        }
+      });
+    }
+    res.redirect("/houses");
+  } catch (err) {
+    next(err);
+  }
 });
 
 // Getting the info from the SignUp
 router.post("/signup", async (req, res, next) => {
   try {
-    let user = await Users.find({ email: req.body.email });
-    if (user) {
+    console.log(req.body.email);
+    let userSignup = await Users.findOne({ email: req.body.email });
+    if (userSignup) {
       throw new Error("User with this email already exists");
     } else {
       await Users.create(req.body);
@@ -31,8 +46,16 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
-router.get("/logout", (req, res) => {
-  res.redirect("/houses");
+router.get("/logout", (req, res, next) => {
+  req.logout((err) => {
+    req.session.destroy((err) => {
+      if (err) {
+        next(err);
+      }
+      res.clearCookie("connect.sid");
+      res.redirect("/auth");
+    });
+  });
 });
 
 module.exports = router;
