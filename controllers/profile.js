@@ -5,11 +5,10 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   let loggedUser = req.user;
-  if (req.isAuthenticated()) {
-    let loggedUser = req.user;
-    res.render("profile", { user: loggedUser });
-  } else {
+  if (!req.isAuthenticated()) {
     res.redirect("/auth/login");
+  } else {
+    res.render("profile", { user: loggedUser });
   }
 });
 

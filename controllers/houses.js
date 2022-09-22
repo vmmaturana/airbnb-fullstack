@@ -10,31 +10,58 @@ router.get("/", (req, res) => {
   res.render("houses/list", { user: loggedUser });
 });
 
-router.get("/create", (req, res) => {
+router.get("/:id/create", (req, res) => {
   let loggedUser = req.user;
-  res.render("/houses/create", { user: loggedUser });
+  if (!req.isAuthenticated()) {
+    res.redirect("/auth/login");
+  } else {
+    res.render("houses/create", { user: loggedUser });
+  }
 });
 
 router.get("/:id", (req, res) => {
   let loggedUser = req.user;
-  res.render("houses/one", { user: loggedUser });
+  if (!req.isAuthenticated()) {
+    res.redirect("/auth/login");
+  } else {
+    res.render("houses/one", { user: loggedUser });
+  }
 });
 
 router.get("/:id/edit", (req, res) => {
   let loggedUser = req.user;
-  res.render("houses/edit", { user: loggedUser });
+  if (!req.isAuthenticated()) {
+    res.redirect("/auth/login");
+  } else {
+    res.render("houses/edit", { user: loggedUser });
+  }
 });
 
 router.post("/", (req, res) => {
-  res.send("HOUSES POST MSGE");
+  let loggedUser = req.user;
+  if (!req.isAuthenticated()) {
+    res.redirect("/auth/login");
+  } else {
+    res.send("HOUSES POST MSGE");
+  }
 });
 
 router.patch("/:id", (req, res) => {
-  res.send("HOUSES PATCH MSGE");
+  let loggedUser = req.user;
+  if (!req.isAuthenticated()) {
+    res.redirect("/auth/login");
+  } else {
+    res.send("HOUSES PATCH MSGE");
+  }
 });
 
 router.delete("/:id", (req, res) => {
-  res.send("HOUSES DELETE MSGE");
+  let loggedUser = req.user;
+  if (!req.isAuthenticated()) {
+    res.redirect("/auth/login");
+  } else {
+    res.send("HOUSES DELETE MSGE");
+  }
 });
 
 module.exports = router;

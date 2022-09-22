@@ -1,1 +1,57 @@
-<p> HOJA DE CREAR </p>
+<!-- NAVIGATION BAR-->
+
+{{> nav}}
+
+<!-- CREATE FORM -->
+<div class="container pt-4">
+	<p class="h1"> List a House </p>
+
+<form class="" action="/houses/:id/create" method="post">
+	<!-- short title -->
+	<label class="form-label mt-3">Short Title</label>
+	<input type="text" class="form-control" name='title'>
+ <!-- description -->
+	<label class="form-label mt-3">Description</label>
+	<textarea type="text" class="form-control" name='description' rows='7'></textarea>
+	<!-- Number of rooms -->
+	<label class="form-label mt-3">Number of rooms</label>
+	<input type="number" class="form-control" name='rooms'>
+
+
+	<!-- Location -->
+	<label class="form-label mt-3">Location</label>
+	<div class="input-group">
+		<label class="input-group-text">
+			<i class="fa-solid fa-location-dot"></i
+		></label>
+		<select class="form-control form-select-sm" name:"location">
+			<option>Any Location</option>
+			<option>Koh Samui</option>
+			<option>Koh Phangan</option>
+			<option>Bali</option>
+		</select>
+	</div>
+
+	<!-- Price per night-->
+	<label class="form-label mt-3">Price per night</label>
+	<div class="input-group">
+		<label class="input-group-text"
+			><i class="fa-solid fa-dollar-sign"></i
+		></label>
+		<input
+			type="text"
+			class="form-control"
+			name = "price"
+		/>
+	</div>
+	<label class="form-label mt-3">Add photo URL (up to 9)</label>
+<input type="text" class="form-control mb-1	" placeholder="Default Input" name='photos'>
+<input type="text" class="form-control mb-1	" placeholder="Default Input" name='photos'><input type="text" class="form-control mb-1	" placeholder="Default Input">
+<input type="text" class="form-control mb-1	" placeholder="Default Input" name='photos'><input type="text" class="form-control mb-1	" placeholder="Default Input">
+<input type="text" class="form-control mb-1	" placeholder="Default Input" name='photos'><input type="text" class="form-control mb-1	" placeholder="Default Input">
+<input type="text" class="form-control mb-1	" placeholder="Default Input" name='photos'><input type="text" class="form-control mb-1	" placeholder="Default Input" name='photos'>
+
+	<button type="button m-5" class="btn btn-success">Submit</button>
+</form>
+
+</div>
