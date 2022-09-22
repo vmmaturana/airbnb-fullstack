@@ -11,21 +11,21 @@
 				<input
 					type="text"
 					class="form-control mb-2"
-					value="Tony Russo"
+					value="{{user.name}}"
 					name="fullname"
 				/>
 				<label class="form-label">Email</label>
 				<input
 					type="email"
 					class="form-control mb-2"
-					value="tortuga@coders.com"
+					value="{{user.email}}"
 					name="fullname"
 				/>
 				<label class="form-label">Profile Picture</label>
 
 				<p>
 					<img
-						src="https://randomuser.me/api/portraits/men/11.jpg"
+						src="{{user.avatar}}"
 						class="rounded-circle w-25"
 						alt="..."
 					/>
@@ -34,7 +34,7 @@
 				<input
 					type="email"
 					class="form-control mb-2"
-					value="photo-address"
+					value="{{user.avatar}}"
 					name="email"
 				/>
 				<button class="btn btn-success">Save Changes</button>
@@ -43,10 +43,8 @@
 		<!-- Column 2 LISTINGS -->
 		<div class="col-7 offset-1">
 			<p class="h1 border-bottom mb-3">My Listings</p>
-			<a class="btn btn-success mb-3">List a house</a>
-			<div class="alert alert-light border" role="alert">
-				A simple light alert—check it out!
-			</div>
+			<a class="btn btn-success mb-3" href="/houses/create">List a house</a>
+			<div class="alert alert-light border" role="alert"> You have no properties listed</div>
 		</div>
 	</div>
 </div>

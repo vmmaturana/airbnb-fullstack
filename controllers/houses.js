@@ -5,14 +5,14 @@ const router = express.Router();
 const Houses = require("../models/houses");
 const Bookings = require("../models/bookings");
 
-// INCLUIR EL IF DE AUTHENTHIFICATION
-
+// RENDER WESBSITE DE HOUSES (LIST) CONTROLLER
 router.get("/", (req, res) => {
   let loggedUser = req.user;
   res.render("houses/list", { user: loggedUser });
 });
 
-router.get("/:id/create", (req, res) => {
+// GET CREATE HOUSE CONTROLLER
+router.get("/create", (req, res) => {
   let loggedUser = req.user;
   if (!req.isAuthenticated()) {
     res.redirect("/auth/login");
@@ -21,15 +21,20 @@ router.get("/:id/create", (req, res) => {
   }
 });
 
-router.get("/:id", (req, res) => {
+// ONE HOUSE CONTROLLER
+router.get("/:id", async (req, res) => {
   let loggedUser = req.user;
   if (!req.isAuthenticated()) {
     res.redirect("/auth/login");
   } else {
-    res.render("houses/one", { user: loggedUser });
+    console.log(req.params.id);
+    let house = await Houses.findById(req.params.id);
+    console.log(house);
+    res.render("houses/one", { user: loggedUser, house });
   }
 });
 
+// EDIT HOUSE CONTROLLER
 router.get("/:id/edit", (req, res) => {
   let loggedUser = req.user;
   if (!req.isAuthenticated()) {
@@ -45,14 +50,13 @@ router.post("/", async (req, res) => {
   if (!req.isAuthenticated()) {
     res.redirect("/auth/login");
   } else {
-    console.log(req.body);
     req.body.host = loggedUser._id;
     let house = await Houses.create(req.body);
-    console.log(house._id);
-    res.send(`/houses/${house._id}`);
+    res.redirect(`/houses/${house._id}`);
   }
 });
 
+//
 router.patch("/:id", (req, res) => {
   let loggedUser = req.user;
   if (!req.isAuthenticated()) {
@@ -62,6 +66,7 @@ router.patch("/:id", (req, res) => {
   }
 });
 
+//
 router.delete("/:id", (req, res) => {
   let loggedUser = req.user;
   if (!req.isAuthenticated()) {

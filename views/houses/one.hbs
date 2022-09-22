@@ -6,89 +6,26 @@
 		<!-- MAIN PICTURE OF THE HOUSE CELL -->
 		<div class="col p-0">
 			<img
-				src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
-"
+				src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
 				class="img-fluid"
 				alt="..."
 			/>
 		</div>
 		<!-- GRID OF PICTURES OF THE HOUSE -->
+
 		<div class="col">
 			<div class="container py-3">
 				<div class="row row-cols-3">
 					<!-- PICTURES - COLUMNS OF PICTURES -->
+						{{#each house.photos as |photos|}}
 					<div class="col">
 						<img
-							src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
-
-						"
+							src="{{photo}}"
 							class="img-fluid"
 							alt="..."
 						/>
 					</div>
-					<div class="col">
-						<img
-							src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
-
-						"
-							class="img-fluid"
-							alt="..."
-						/>
-					</div>
-					<div class="col">
-						<img
-							src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
-
-						"
-							class="img-fluid"
-							alt="..."
-						/>
-					</div>
-					<div class="col">
-						<img
-							src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
-
-						"
-							class="img-fluid"
-							alt="..."
-						/>
-					</div>
-					<div class="col">
-						<img
-							src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
-
-						"
-							class="img-fluid"
-							alt="..."
-						/>
-					</div>
-					<div class="col">
-						<img
-							src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
-
-						"
-							class="img-fluid"
-							alt="..."
-						/>
-					</div>
-					<div class="col">
-						<img
-							src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
-
-						"
-							class="img-fluid"
-							alt="..."
-						/>
-					</div>
-					<div class="col">
-						<img
-							src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
-
-						"
-							class="img-fluid"
-							alt="..."
-						/>
-					</div>
+				{{/each}}
 				</div>
 			</div>
 		</div>
@@ -99,39 +36,31 @@
 <!-- DESCRIPTION AND PRICE CARD (2 colmns, 1st column 2 rows) -->
 <div class="container border border-light">
 	<div class="row">
-		<div class="col">
+		<div class="col-8">
 			<!-- Description of the property -->
 			<div class="row">
-				<h1>New villa in Koh Phangan</h1>
-				<small>Koh Samui - 4 Rooms</small>
-				<div class="row">
-					<div class="col">foto</div>
-					<div class="col">Nombre</div>
+				<div class="">
+					<p class='h1'>{{house.title}}</p>
 				</div>
-				<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting
-					industry. Lorem Ipsum has been the industry's standard dummy text
-					ever since the 1500s, when an unknown printer took a galley of
-					type and scrambled it to make a type specimen book. It has
-					survived not only five centuries, but also the leap into
-					electronic typesetting, remaining essentially unchanged. It was
-					popularised in the 1960s with the release of Letraset sheets
-					containing Lorem Ipsum passages, and more recently with desktop
-					publishing software like Aldus PageMaker including versions of
-					Lorem Ipsum.
-				</p>
+				<p class=small>{{house.location}} - {{house.rooms}} Rooms</p>
+				<div class="row">
+					<div class="col">{{user.avatar}}</div>
+					<div class="col">{{user.name}}</div>
+				</div>
+
 			</div>
-			<div class="row">review</div>
+			<div class="row">{{house.description}}</div>
 		</div>
+		<!-- REQUEST BOOKING SIDE -->
 		<div class="col py-5">
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">
-						Some quick example text to build on the card title and make up
-						the bulk of the card's content.
-					</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
+					<p class="h5 card-title">${{house.price}} a Night</p>
+				  <p class="small"> 3 reviews</p>
+					<form action="houses/one" method="post">
+						<textarea class="form-control" name="description" rows=3></textarea>
+						<button type="button" class="btn btn-success mt-4">Request booking</button>
+					</form>
 				</div>
 			</div>
 		</div>
