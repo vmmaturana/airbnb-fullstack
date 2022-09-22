@@ -6,13 +6,15 @@
 <div class="container pt-4">
 	<p class="h1"> List a House </p>
 
-<form class="" action="/houses/:id/create" method="post">
+<form class="" action="/houses" method="post">
 	<!-- short title -->
 	<label class="form-label mt-3">Short Title</label>
 	<input type="text" class="form-control" name='title'>
+
  <!-- description -->
 	<label class="form-label mt-3">Description</label>
 	<textarea type="text" class="form-control" name='description' rows='7'></textarea>
+
 	<!-- Number of rooms -->
 	<label class="form-label mt-3">Number of rooms</label>
 	<input type="number" class="form-control" name='rooms'>
@@ -24,11 +26,11 @@
 		<label class="input-group-text">
 			<i class="fa-solid fa-location-dot"></i
 		></label>
-		<select class="form-control form-select-sm" name:"location">
-			<option>Any Location</option>
-			<option>Koh Samui</option>
-			<option>Koh Phangan</option>
-			<option>Bali</option>
+		<select class="form-control form-select-sm" name='location'>
+			<option selected="">Any Location</option>
+			<option value= 1>Koh Samui</option>
+			<option value= 2>Koh Phangan</option>
+			<option value= 3>Bali</option>
 		</select>
 	</div>
 
@@ -44,6 +46,9 @@
 			name = "price"
 		/>
 	</div>
+
+<!-- PHOTOS OF THE HOUSE  -->
+
 	<label class="form-label mt-3">Add photo URL (up to 9)</label>
 <input type="text" class="form-control mb-1	" placeholder="Default Input" name='photos'>
 <input type="text" class="form-control mb-1	" placeholder="Default Input" name='photos'><input type="text" class="form-control mb-1	" placeholder="Default Input">

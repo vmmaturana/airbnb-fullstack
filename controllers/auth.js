@@ -15,7 +15,6 @@ router.get("/signup", (req, res) => {
 router.post("/login", async (req, res, next) => {
   try {
     let userLogin = await Users.findOne(req.body);
-    console.log(userLogin);
     if (!userLogin) {
       throw new Error("Incorrect login data");
     } else {

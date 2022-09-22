@@ -27,7 +27,7 @@ module.exports = mongoose.model("houses", {
     required: true,
   },
   title: {
-    type: Text,
+    type: String,
     required: true,
   },
 });
