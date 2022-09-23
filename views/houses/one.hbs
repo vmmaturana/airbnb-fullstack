@@ -1,7 +1,7 @@
 <!-- PARTIAL OF NAV -->
 {{> nav}}
 <!-- SECTION PICTURES OF THE HOUSE - CONTAINER DIVIDED IN TWO COLUMNS. 2ND COLUMN HAS A CONTAINER WITH A 3 COLUMN GRID (9 PICTURES TOTAL) -->
-<div class="container border border-light">
+<div class="container border border-grey">
 	<div class="row">
 		<!-- MAIN PICTURE OF THE HOUSE CELL -->
 		<div class="col p-0">
@@ -14,19 +14,12 @@
 		<!-- GRID OF PICTURES OF THE HOUSE -->
 
 		<div class="col">
-			<div class="container py-3">
-				<div class="row row-cols-3">
-					<!-- PICTURES - COLUMNS OF PICTURES -->
-						{{#each house.photos as |photos|}}
-					<div class="col">
-						<img
-							src="{{photo}}"
-							class="img-fluid"
-							alt="..."
-						/>
-					</div>
-				{{/each}}
+			<div class="row row-cols-3 g-3 my-3">
+				{{#each house.photos as |photo|}}
+				<div class="col-4">
+					<img src="{{photo}}">
 				</div>
+				{{/each}}
 			</div>
 		</div>
 		<!-- END GRID OF PICTURES OF THE HOUSE -->

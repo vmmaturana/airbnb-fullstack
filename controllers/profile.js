@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
   }
 });
 
+// CHANGE THE PROFILE
 router.patch("/", (req, res) => {
   res.send("PATCH profile");
 });

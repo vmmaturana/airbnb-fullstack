@@ -6,9 +6,33 @@ const Houses = require("../models/houses");
 const Bookings = require("../models/bookings");
 
 // RENDER WESBSITE DE HOUSES (LIST) CONTROLLER
-router.get("/", (req, res) => {
+router.get("/", async (req, res, next) => {
   let loggedUser = req.user;
-  res.render("houses/list", { user: loggedUser });
+  let query = {};
+  let houses = await Houses.find({});
+  //Location filter
+  console.log(req.query.location);
+  if (req.query.location) {
+    query.location = req.query.location;
+  }
+  // Rooms filter
+  if (req.query.rooms) {
+    query.rooms = req.query.rooms;
+  }
+  // Max Price FILTER (MEJORAR ESTE QUERY)
+  if (req.query.maxPrice) {
+    query.maxPrice = req.query.maxPrice;
+  }
+
+  //AGREGAR QUERI DE  DROPDOWN Y SEARCH
+
+  console.log("ABAJO HAY QUERY");
+  console.log(query);
+  houses = await Houses.find(query);
+  console.log("ABAJO HAY HOUESES");
+  console.log(houses);
+
+  res.render("houses/list", { user: loggedUser, houses });
 });
 
 // GET CREATE HOUSE CONTROLLER
