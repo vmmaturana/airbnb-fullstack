@@ -8,7 +8,7 @@
 			<img
 				src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
 				class="img-fluid"
-				alt="..."
+				id="mainPicture"
 			/>
 		</div>
 		<!-- GRID OF PICTURES OF THE HOUSE -->
@@ -17,7 +17,7 @@
 			<div class="row row-cols-3 g-3 my-3">
 				{{#each house.photos as |photo|}}
 				<div class="col-4">
-					<img src="{{photo}}">
+					<img id="clickedPicture" src="{{photo}}" >
 				</div>
 				{{/each}}
 			</div>
